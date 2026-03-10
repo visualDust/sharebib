@@ -56,7 +56,7 @@ class ShareBibClient:
             {
                 "X-API-Key": self.api_key,
                 "Accept": "application/json",
-                "User-Agent": "sharebib-sdk/0.1.0",
+                "User-Agent": "sharebib-sdk/0.4.0",
             }
         )
 

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sharebib"
-version = "0.1.0"
+version = "0.4.0"
 description = "Python SDK and CLI for ShareBib"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -33,10 +33,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/visualdust/share-bib"
-Documentation = "https://github.com/visualdust/share-bib/tree/main/sdk"
-Repository = "https://github.com/visualdust/share-bib"
-Issues = "https://github.com/visualdust/share-bib/issues"
+Homepage = "https://github.com/visualdust/sharebib"
+Documentation = "https://github.com/visualdust/sharebib/tree/main/sdk"
+Repository = "https://github.com/visualdust/sharebib"
+Issues = "https://github.com/visualdust/sharebib/issues"
 
 [project.scripts]
 sharebib = "sharebib.cli:main"

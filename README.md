@@ -44,7 +44,7 @@ Your labmate opens the link you shared → exports the `.bib` → imports it int
 ### Claude Code
 
 ```bash
-/plugin marketplace add visualdust/share-bib
+/plugin marketplace add visualdust/sharebib
 /plugin install sharebib
 ```
 
@@ -53,9 +53,9 @@ Your labmate opens the link you shared → exports the `.bib` → imports it int
 Using [vercel-labs/skills](https://skills.sh/):
 
 ```bash
-npx skills add visualdust/share-bib -a codex    # Codex
-npx skills add visualdust/share-bib -a cursor   # Cursor
-npx skills add visualdust/share-bib -a windsurf # Windsurf
+npx skills add visualdust/sharebib -a codex    # Codex
+npx skills add visualdust/sharebib -a cursor   # Cursor
+npx skills add visualdust/sharebib -a windsurf # Windsurf
 ```
 
 ### Prerequisites
@@ -267,7 +267,7 @@ pip install -e .
 For the latest unreleased version from GitHub:
 
 ```bash
-pip install "git+https://github.com/visualdust/share-bib.git#subdirectory=sdk"
+pip install "git+https://github.com/visualdust/sharebib.git#subdirectory=sdk"
 ```
 
 This installs both:

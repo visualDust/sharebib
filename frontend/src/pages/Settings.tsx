@@ -19,6 +19,7 @@ import {
   IconTick,
   IconClose,
   IconDelete,
+  IconHelpCircle,
 } from "@douyinfe/semi-icons";
 import client from "../api/client";
 import { useSystemStatus } from "../App";
@@ -94,6 +95,7 @@ export default function Settings() {
   const [newKeyName, setNewKeyName] = useState("");
   const [createdKey, setCreatedKey] = useState<string | null>(null);
   const [createdKeyVisible, setCreatedKeyVisible] = useState(false);
+  const [agentGuideVisible, setAgentGuideVisible] = useState(false);
 
   const loadApiKeys = () => {
     client
@@ -525,14 +527,40 @@ export default function Settings() {
           >
             {t("settings.sdkApiKeysDesc")}
           </Text>
-          <Button
-            theme="solid"
-            size="small"
-            onClick={() => setCreateKeyVisible(true)}
-            style={{ marginBottom: 16 }}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              marginBottom: 16,
+              flexWrap: "wrap",
+            }}
           >
-            {t("settings.createApiKey")}
-          </Button>
+            <Button
+              theme="solid"
+              size="small"
+              onClick={() => setCreateKeyVisible(true)}
+            >
+              {t("settings.createApiKey")}
+            </Button>
+            <Button
+              icon={<IconHelpCircle style={{ fontSize: 13 }} />}
+              theme="borderless"
+              size="small"
+              type="tertiary"
+              style={{
+                padding: 0,
+                height: "auto",
+                fontSize: 12,
+                fontWeight: 400,
+                color: "var(--semi-color-text-2)",
+                textDecoration: "underline",
+              }}
+              onClick={() => setAgentGuideVisible(true)}
+            >
+              {t("settings.agentGuideLink")}
+            </Button>
+          </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {userApiKeys.map((key) => (
               <div
@@ -861,6 +889,115 @@ export default function Settings() {
               </div>
             )}
           </div>
+        </div>
+      </Modal>
+
+      <Modal
+        title={t("settings.agentGuideTitle")}
+        visible={agentGuideVisible}
+        onCancel={() => setAgentGuideVisible(false)}
+        footer={
+          <Button theme="solid" onClick={() => setAgentGuideVisible(false)}>
+            {t("settings.close")}
+          </Button>
+        }
+        width={720}
+      >
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <Text>{t("settings.agentGuideIntro")}</Text>
+
+          <div>
+            <Text strong>{t("settings.agentGuideStep1")}</Text>
+            <pre
+              style={{
+                marginTop: 8,
+                padding: 12,
+                borderRadius: 8,
+                background: "var(--semi-color-fill-0)",
+                overflowX: "auto",
+                fontSize: 12,
+              }}
+            >
+              {`pip install sharebib`}
+            </pre>
+          </div>
+
+          <div>
+            <Text strong>{t("settings.agentGuideStep2")}</Text>
+            <pre
+              style={{
+                marginTop: 8,
+                padding: 12,
+                borderRadius: 8,
+                background: "var(--semi-color-fill-0)",
+                overflowX: "auto",
+                fontSize: 12,
+              }}
+            >
+              {`/plugin marketplace add visualdust/sharebib
+/plugin install sharebib`}
+            </pre>
+          </div>
+
+          <div>
+            <Text strong>{t("settings.agentGuideStep3")}</Text>
+            <pre
+              style={{
+                marginTop: 8,
+                padding: 12,
+                borderRadius: 8,
+                background: "var(--semi-color-fill-0)",
+                overflowX: "auto",
+                fontSize: 12,
+              }}
+            >
+              {`npx skills add visualdust/sharebib -a codex
+npx skills add visualdust/sharebib -a cursor
+npx skills add visualdust/sharebib -a windsurf`}
+            </pre>
+          </div>
+
+          <div>
+            <Text strong>{t("settings.agentGuideStep4")}</Text>
+            <pre
+              style={{
+                marginTop: 8,
+                padding: 12,
+                borderRadius: 8,
+                background: "var(--semi-color-fill-0)",
+                overflowX: "auto",
+                fontSize: 12,
+              }}
+            >
+              {`export SHAREBIB_API_KEY="pc_..."
+export SHAREBIB_BASE_URL="https://your-sharebib.example.com"
+
+sharebib auth info`}
+            </pre>
+          </div>
+
+          <div>
+            <Text strong>{t("settings.agentGuideStep5")}</Text>
+            <pre
+              style={{
+                marginTop: 8,
+                padding: 12,
+                borderRadius: 8,
+                background: "var(--semi-color-fill-0)",
+                overflowX: "auto",
+                fontSize: 12,
+              }}
+            >
+              {`List my ShareBib collections
+Create a private reading list for systems papers
+Find Gavin's account and share collection 123 with edit access
+Export collection 123 as BibTeX`}
+            </pre>
+          </div>
+
+          <Text type="tertiary" style={{ fontSize: 12 }}>
+            {t("settings.agentGuideTip")}
+          </Text>
         </div>
       </Modal>
 

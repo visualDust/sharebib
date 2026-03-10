@@ -19,7 +19,7 @@ This installs:
 ### Install the latest unreleased version from GitHub
 
 ```bash
-pip install "git+https://github.com/visualdust/share-bib.git#subdirectory=sdk"
+pip install "git+https://github.com/visualdust/sharebib.git#subdirectory=sdk"
 ```
 
 ### Local development
@@ -36,7 +36,7 @@ pip install -e .
 3. In **SDK API Keys**, click **Create API Key**
 4. Copy the generated key (starts with `pc_`)
 
-![API Key Management](https://raw.githubusercontent.com/visualdust/share-bib/main/sdk/api-key-screenshot.png)
+![API Key Management](https://raw.githubusercontent.com/visualdust/sharebib/main/sdk/api-key-screenshot.png)
 
 ## Configuration
 

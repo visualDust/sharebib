@@ -57,7 +57,7 @@ After running commands:
   ```
 - Or install the latest unreleased version from GitHub:
   ```bash
-  pip install "git+https://github.com/visualdust/share-bib.git#subdirectory=sdk"
+  pip install "git+https://github.com/visualdust/sharebib.git#subdirectory=sdk"
   ```
 - API key format: `pc_...`
 - Preferred CLI command: `sharebib`
@@ -197,7 +197,7 @@ pip install --upgrade sharebib
 If you need the latest unreleased version instead:
 
 ```bash
-pip install --upgrade "git+https://github.com/visualdust/share-bib.git#subdirectory=sdk"
+pip install --upgrade "git+https://github.com/visualdust/sharebib.git#subdirectory=sdk"
 ```
 
 ## Safety Notes

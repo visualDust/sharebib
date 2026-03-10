@@ -1,6 +1,6 @@
 """ShareBib Python SDK."""
 
-__version__ = "0.1.0"
+__version__ = "0.4.0"
 
 from .client import ShareBibClient
 from .exceptions import ShareBibAPIError, ShareBibConfigError, ShareBibError
