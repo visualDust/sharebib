@@ -1,12 +1,14 @@
 # ShareBib
 
-A simple, self-hosted tool for managing and sharing BibTeX collections with labmates.
+ShareBib is a self-hosted paper collection manager for BibTeX workflows, with a web app for teams, a Python SDK and CLI for automation, and agent skill support for AI-assisted paper management.
+
+Use it to share collections with labmates, import and export `.bib` files, run scheduled arXiv crawlers, and manage papers programmatically from your shell, scripts, or AI agent.
 
 ## Typical workflow
 
 You curate papers in Zotero → right-click a collection → Export Collection → `.bib` → upload it here.
 
-Your labmate opens the link you shared → exports the `.bib` → imports it into their own Zotero. Done.
+Your labmate opens the link you shared → exports the `.bib` → imports it into their own Zotero. Or use the `sharebib` CLI / agent skill to automate the same workflow.
 
 <table>
   <tr>
@@ -30,7 +32,7 @@ Your labmate opens the link you shared → exports the `.bib` → imports it int
 - Scheduled crawl tasks: auto-fetch new papers from arXiv RSS with keyword filtering (`+required`, `-excluded`, `*wildcard`)
 - Duplication detection and merging
 - Organize papers into collections with per-user access control
-- **SDK and CLI for programmatic access and Agent skills** - automate paper management with your own scripts or shell workflows, as well as use with AI agents.
+- Python SDK, `sharebib` CLI, and agent skill support for programmatic paper-management workflows
 - i18n support (English, 中文)
 - Desktop and mobile page layout
 
